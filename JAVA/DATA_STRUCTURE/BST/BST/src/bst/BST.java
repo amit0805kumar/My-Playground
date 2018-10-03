@@ -18,7 +18,63 @@ class Node {
 }
 
 public class BST {
+    
+    //INORDER traversal
+    public void inOrder(Node root) {
 
+        if (root.left == null && root.right == null) {
+            System.out.print(root.data + " ");
+        } else {
+            if (root.left != null) {
+                inOrder(root.left);
+                System.out.print(root.data + " ");
+            }
+            if (root.right != null) {
+                inOrder(root.right);
+
+            }
+        }
+
+    }
+    
+    /*  Only leaf node traversal
+    public void inOrder(Node root) {
+
+        if (root.left == null) {
+            System.out.print(root.data + " ");
+                 if (root.right == null){
+                    
+                    }
+            
+        } else {
+          inOrder(root.left);
+                if (root.right != null){
+                        inOrder(root.right);
+                    }
+        }
+
+    }
+    */
+/*
+    //For retreiving only Non leaf nodes
+    
+    public void inOrder(Node root) {
+
+        if (root.left == null && root.right == null) {
+            System.out.print(root.data + " ");
+        } else {
+            if (root.left != null) {
+                inOrder(root.left);
+                System.out.print(root.data + " ");
+            }
+            if (root.right != null) {
+                inOrder(root.right);
+
+            }
+        }
+
+    }
+  */  
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int t = sc.nextInt();
@@ -51,10 +107,11 @@ public class BST {
                 h.put(n2, child);
                 n--;
             }
-             System.out.println(h);
+            BST b = new BST();
+            b.inOrder(root);
             t--;
         }
-        
+
     }
 
 }
